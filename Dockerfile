@@ -5,13 +5,16 @@ MAINTAINER John Axel Eriksson <john@insane.se>
 RUN locale-gen en_US en_US.UTF-8 &&\
     dpkg-reconfigure locales &&\
     ln -sf /usr/share/zoneinfo/UTC /etc/localtime &&\
+    apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 42F3E95A2C4F08279C4960ADD68FA50FEA312927 &&\
+    apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A &&\
+    echo "deb http://repo.pritunl.com/stable/apt trusty main" > /etc/apt/sources.list.d/pritunl.list &&\
+    echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.2.list &&\
     apt-get update -q &&\
     apt-get upgrade -y -q &&\
     apt-get dist-upgrade -y -q &&\
     apt-get install -y software-properties-common python-software-properties &&\
-    add-apt-repository ppa:pritunl/ppa &&\
     apt-get update -q &&\
-    apt-get install -y pritunl &&\
+    apt-get install -y pritunl mongodb-org &&\
     apt-get clean &&\
     apt-get -y -q autoclean &&\
     apt-get -y -q autoremove &&\
