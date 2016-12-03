@@ -28,7 +28,7 @@ RUN locale-gen en_US en_US.UTF-8 &&\
 
 ADD start-pritunl /bin/start-pritunl
 
-EXPOSE 9700
+EXPOSE 443
 EXPOSE 1194
 EXPOSE 11194
 
