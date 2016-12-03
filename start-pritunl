@@ -137,7 +137,7 @@ cat << EOF > /etc/pritunl.conf
     "port": 443
 }
 EOF
-
+mongod --fork --logpath /var/log/mongodb.log
 /usr/bin/pritunl start &
 [ "$1" ] && exec "$@"
 
