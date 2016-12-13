@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-
+ENV TERM xterm
 MAINTAINER John Axel Eriksson <john@insane.se>
 
 RUN locale-gen en_US en_US.UTF-8 &&\
