@@ -20,11 +20,16 @@ RUN locale-gen en_US en_US.UTF-8 &&\
     apt-get clean &&\
     apt-get -y -q autoclean &&\
     apt-get -y -q autoremove &&\
-    rm -rf /tmp/*
+    rm -rf /tmp/* &&\
+	touch /var/log/pritunl.log
     
+
+ADD mongodb.conf /etc/mongodb.conf
+ADD pritunl.conf /etc/pritunl.conf
 
 ADD start-pritunl /bin/start-pritunl
 
+EXPOSE 80
 EXPOSE 443
 EXPOSE 1194
 EXPOSE 11194
