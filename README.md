@@ -1,9 +1,11 @@
 ## Pritunl as a Docker container
 
-Just build it or pull it from johnae/pritunl. Run it something like this:
+This is derived from johnae/pritunl
+
+Just build it or pull it from tgarm/pritunl. Run with:
 
 ```
-docker run -d --privileged -p 1194:1194/udp -p 1194:1194/tcp -p 9700:9700/tcp johnae/pritunl
+make run
 ```
 
 If you have a mongodb somewhere you'd like to use for this rather than starting the built-in one you can

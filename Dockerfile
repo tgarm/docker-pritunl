@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 ENV TERM xterm
-MAINTAINER John Axel Eriksson <john@insane.se>
+MAINTAINER Simon Ding
 
 RUN locale-gen en_US en_US.UTF-8 &&\
     dpkg-reconfigure locales &&\
@@ -21,9 +21,6 @@ RUN locale-gen en_US en_US.UTF-8 &&\
     apt-get -y -q autoclean &&\
     apt-get -y -q autoremove &&\
     rm -rf /tmp/*
-    
-    
-   
     
 
 ADD start-pritunl /bin/start-pritunl
